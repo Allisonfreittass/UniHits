@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo2.png">
   <title>Login</title>
 </head>
 <body>
@@ -23,8 +24,8 @@
       <h5>LOGIN</h5>
       <p>Não tem conta? <a href="novaconta.html">Crie sua conta aqui.</a></p>
       <div class="input">
-      <input type="text" placeholder="Nome"> <br>
-      <input type="password" placeholder="Password">
+        <input type="text" placeholder="Login" id="login">
+        <input type="password" placeholder="Senha" id="senha">
       </div>
       <br><br>
       <div class="remember-me">
@@ -35,8 +36,27 @@
         <p> <a href="#">Esqueci minha senha</a></p>
       </div>
       <br>
-      <button><a href="ouca.html">Login</a></button>
+      <input class="submit" type="submit" onclick="logar(); return false">
     </div>
  </div>
+
+ <script>
+
+  function logar(){
+
+      var login = document.getElementById('login').value;
+      var senha = document.getElementById('senha').value;
+
+      if(login == "admin" && senha == "admin"){
+          alert('Sucesso');
+          location.href = "index.html";
+      }else{
+          alert('Usuario ou senha incorretos');
+      }
+
+  }
+
+</script>
+
 </body>
 </html>
